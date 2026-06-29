@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Bible Devotional AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:        #C9A84C;
+      --gold-light:  #F0E0A8;
+      --gold-dim:    rgba(201,168,76,0.15);
+      --ink:         #1A1A1A;
+      --ink-soft:    #4A4A4A;
+      --ink-muted:   #7A7A7A;
+      --parchment:   #FAF7F2;
+      --white:       #FFFFFF;
+      --rule:        rgba(201,168,76,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--parchment);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--ink);
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 120%, rgba(201,168,76,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .header-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .header-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .header-subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+    }
+
+    .header-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 24px auto 0;
+    }
+
+    /* ── Meta bar ── */
+    .meta-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+
+    .meta-item span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* ── Layout ── */
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+
+    /* ── Summary card ── */
+    .summary-card {
+      background: var(--gold-dim);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--gold);
+      border-radius: 6px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+
+    .summary-card h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+    }
+
+    .summary-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    .summary-item .check {
+      color: var(--gold);
+      font-size: 15px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Sections ── */
+    .policy-section {
+      margin-bottom: 52px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--rule);
+      line-height: 1.3;
+    }
+
+    .policy-section p {
+      color: var(--ink-soft);
+      font-size: 15.5px;
+      margin-bottom: 14px;
+    }
+
+    .policy-section p:last-child { margin-bottom: 0; }
+
+    .policy-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0;
+    }
+
+    .policy-section ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--ink-soft);
+      font-size: 15.5px;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .policy-section ul li::before {
+      content: '—';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* ── Callout ── */
+    .callout {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin: 20px 0;
+      font-size: 15px;
+      color: var(--ink-soft);
+      font-style: italic;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    .footer-brand {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 16px;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .footer-verse {
+      font-style: italic;
+      margin-top: 20px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 540px) {
+      .meta-bar { gap: 16px; }
+      .summary-card { padding: 22px 20px; }
+      .page-wrap { padding: 40px 20px 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="header-eyebrow">Fajostech</p>
+    <h1 class="header-title">Privacy Policy</h1>
+    <p class="header-subtitle">Bible Devotional AI</p>
+    <div class="header-rule"></div>
+  </header>
+
+  <div class="meta-bar">
+    <div class="meta-item"><span class="dot"></span> Effective: June 29, 2025</div>
+    <div class="meta-item"><span class="dot"></span> Last Updated: June 29, 2025</div>
+    <div class="meta-item"><span class="dot"></span> Developer: Fajostech</div>
+  </div>
+
+  <div class="page-wrap">
+
+    <!-- Summary -->
+    <div class="summary-card">
+      <h2>The short version</h2>
+      <div class="summary-grid">
+        <div class="summary-item"><span class="check">✦</span> No personal data collected</div>
+        <div class="summary-item"><span class="check">✦</span> No account or sign-up required</div>
+        <div class="summary-item"><span class="check">✦</span> No tracking or analytics</div>
+        <div class="summary-item"><span class="check">✦</span> No data sold to third parties</div>
+        <div class="summary-item"><span class="check">✦</span> Free to use, always</div>
+        <div class="summary-item"><span class="check">✦</span> Open and transparent</div>
+      </div>
+    </div>
+
+    <!-- 1 -->
+    <div class="policy-section">
+      <p class="section-label">01</p>
+      <h2 class="section-title">Introduction</h2>
+      <p>Welcome to <strong>Bible Devotional AI</strong>, developed and maintained by <strong>Fajostech</strong>. We are committed to protecting your privacy. This Privacy Policy explains our approach to data — which, simply put, is to collect as little as possible and to be fully transparent about everything we do.</p>
+      <p>By using Bible Devotional AI, you agree to the practices described in this policy. If you have any questions, you can reach us at <strong>fajostech.com</strong>.</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="policy-section">
+      <p class="section-label">02</p>
+      <h2 class="section-title">No Personal Data Collected</h2>
+      <p>Bible Devotional AI does <strong>not collect, store, or process any personally identifiable information (PII)</strong>. This means:</p>
+      <ul>
+        <li>You do not need to create an account or register to use the app.</li>
+        <li>We do not ask for your name, email address, phone number, or any identifying detail.</li>
+        <li>We do not track your location.</li>
+        <li>We do not build a profile of you in any way.</li>
+      </ul>
+      <p>You open the app, use it, and close it — entirely anonymously.</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="policy-section">
+      <p class="section-label">03</p>
+      <h2 class="section-title">How the AI Features Work</h2>
+      <p>Bible Devotional AI uses AI to generate personalized devotionals and scripture-based content. When you type a topic or request, that text is sent to an AI provider (OpenAI) to generate a response. Please be aware of the following:</p>
+      <ul>
+        <li>Your query is sent to OpenAI's servers to produce your devotional content.</li>
+        <li>We do not store your queries on our own servers.</li>
+        <li>We do not associate your queries with any user identity — there is no identity to associate them with.</li>
+        <li>OpenAI's own privacy policy governs how they handle API requests. You can review it at <strong>openai.com/privacy</strong>.</li>
+      </ul>
+      <div class="callout">
+        We recommend avoiding entering sensitive personal information into the AI prompt fields. Treat your prompts as you would any text sent over the internet.
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="policy-section">
+      <p class="section-label">04</p>
+      <h2 class="section-title">Local Storage on Your Device</h2>
+      <p>Some data is stored <strong>locally on your device only</strong> to improve your experience. This includes:</p>
+      <ul>
+        <li>Your preferred Bible version and reading settings.</li>
+        <li>Saved devotionals, highlights, and favorites you choose to keep.</li>
+        <li>Cached Bible verses to reduce repeated network requests.</li>
+        <li>Notification preferences (e.g. daily reminder times).</li>
+      </ul>
+      <p>This data never leaves your device and is never transmitted to us or any third party. You can clear it at any time from the <strong>Settings → Data Management</strong> section of the app.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="policy-section">
+      <p class="section-label">05</p>
+      <h2 class="section-title">Third-Party Services</h2>
+      <p>Bible Devotional AI connects to the following external services to deliver Bible content and AI features:</p>
+      <ul>
+        <li><strong>OpenAI</strong> — to generate AI devotional content from your topic inputs.</li>
+        <li><strong>Bolls.life Bible API</strong> — to retrieve Bible verses across multiple translations.</li>
+        <li><strong>GitHub (raw content)</strong> — to fetch certain Bible version files.</li>
+      </ul>
+      <p>These services have their own privacy policies. We do not control how they handle data at their end, but we do not send any user-identifying information to any of them.</p>
+    </div>
+
+    <!-- 6 -->
+    <div class="policy-section">
+      <p class="section-label">06</p>
+      <h2 class="section-title">No Advertising, No Selling of Data</h2>
+      <p>Bible Devotional AI is a <strong>free app</strong>. We do not display advertisements, and we do not sell, rent, trade, or share any user data with advertisers or data brokers — because we do not have any user data to sell.</p>
+      <p>This app is offered freely as a tool for personal Bible study and devotional growth. Our motivation is to serve users, not to monetise them.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="policy-section">
+      <p class="section-label">07</p>
+      <h2 class="section-title">Children's Privacy</h2>
+      <p>Bible Devotional AI does not knowingly collect any information from children under the age of 13 (or the applicable age of digital consent in your jurisdiction). Since the app collects no personal data from anyone, it is equally safe for all ages. If you are a parent or guardian with concerns, please contact us at <strong>fajostech.com</strong>.</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="policy-section">
+      <p class="section-label">08</p>
+      <h2 class="section-title">Your Rights</h2>
+      <p>Because we collect no personal data, there is no personal data to access, correct, export, or delete on our end. All data stored by the app lives on your device and can be cleared directly within the app at any time.</p>
+      <p>If you are in a region with specific data protection laws (such as GDPR in Europe or CCPA in California), please know that our no-collection approach means those regulations have minimal application to our service — but we welcome any questions you may have.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="policy-section">
+      <p class="section-label">09</p>
+      <h2 class="section-title">Changes to This Policy</h2>
+      <p>If we ever update this Privacy Policy, we will revise the "Last Updated" date at the top of this page. We encourage you to review the policy periodically. Continued use of the app after any changes constitutes your acceptance of the updated policy.</p>
+      <p>We do not anticipate significant changes, as our commitment to not collecting user data is foundational — not an afterthought.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="policy-section">
+      <p class="section-label">10</p>
+      <h2 class="section-title">Contact Us</h2>
+      <p>If you have any questions, concerns, or feedback about this Privacy Policy or the app in general, we'd love to hear from you:</p>
+      <ul>
+        <li><strong>Developer:</strong> Fajostech</li>
+        <li><strong>Website:</strong> fajostech.com</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-brand">Bible Devotional AI</p>
+    <p>Developed by <a href="https://fajostech.com">Fajostech</a> &nbsp;·&nbsp; <a href="https://fajostech.com">fajostech.com</a></p>
+    <p style="margin-top:8px;">© 2025 Fajostech. All rights reserved.</p>
+    <p class="footer-verse">"Your word is a lamp to my feet and a light to my path." — Psalm 119:105</p>
+  </footer>
+
+</body>
+</html>
